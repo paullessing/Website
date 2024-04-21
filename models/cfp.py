@@ -437,6 +437,8 @@ class Proposal(BaseModel):
     youtube_url = db.Column(db.String)
     thumbnail_url = db.Column(db.String)
 
+    tickets = db.relationship("EventTicket", backref="proposal")
+
     __mapper_args__ = {"polymorphic_on": type}
 
     @classmethod
